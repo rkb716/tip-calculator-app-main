@@ -15,38 +15,43 @@
 <body>
 
   <div class="background">
-    <h1>SPLI<br/>TTER</h1>
+    <h1>SPLI<br />TTER</h1>
     <div class="calculator-container">
-      <div class="bill-container">
-        Bill
-
+      <div class="bill-container grid-centered">
+        <p class="option-header">Bill</p>
+        <div class="input-number">
+          <img src="./images/icon-dollar.svg" />
+          <input type="number" />
+        </div>
       </div>
-      <div class="tip-container">
-        Select Tip %
-        5%
-        10%
-        15%
-        25%
-        50%
-        Custom
+      <div class="tip-container grid-centered">
+        <p class="option-header" style="grid-area: header">Select Tip %</p>
+        <button type="button" style="grid-area: b1">5%</button>
+        <button type="button" style="grid-area: b2">10%</button>
+        <button type="button" style="grid-area: b3">15%</button>
+        <button type="button" style="grid-area: b4">25%</button>
+        <button type="button" style="grid-area: b5">50%</button>
+        <button type="button" style="grid-area: b6">Custom</button>
       </div>
-      <div class="people-container">
-        Number of People
+      <div class="people-container grid-centered">
+        <p class="option-header">Number of People</p>
+        <div class="input-number">
+          <img src="./images/icon-person.svg" />
+          <input type="number" />
+        </div>
       </div>
-      <div class="calculations-container">
-        Tip Amount
-        / person
-
-        Total
-        / person
-
-        Reset
+      <div class="calculations-container grid-centered">
+        <p class="label" style="grid-area: tip-label">Tip Amount<br><span class="label-small">/ person</span></p>
+        <p class="amount" style="grid-area: tip-amount">$4.27</p>
+        <p class="label" style="grid-area: total-label">Total<br><span class="label-small">/ person</span></p>
+        <p class="amount" style="grid-area: total-amount">$32.79</p>
+        <button class="grid-centered" type="button" style="grid-area: reset">RESET</button>
       </div>
     </div>
-  </div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Ryan Billings</a>.
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Ryan Billings</a>.
+    </div>
   </div>
 </body>
 

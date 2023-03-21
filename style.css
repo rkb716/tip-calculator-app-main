@@ -4,7 +4,11 @@
 
 .background {
     background-color: hsl(185, 41%, 84%);
-    max-width: 1440px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1440px;
     height: 900px;
     display: flex;
     flex-direction: column;
@@ -14,13 +18,156 @@
 
 h1 {
     text-align: center;
+    color:hsl(183, 100%, 15%);
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .calculator-container {
     background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
     width: 50%;
     height: 50%;
     display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-areas:
+        "bill calc"
+        "tip calc"
+        "people calc";
+}
+
+.option-header {
+    color:hsl(184, 14%, 56%);
+    font-weight: 700;
+}
+
+.grid-centered {
+    justify-self: center;
+    align-self: center;
+}
+
+.bill-container {
+    grid-area: bill;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.input-number {
+    width: 100%;
+    height: 25%;
+    position: relative;
+}
+
+.input-number input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color:hsl(189, 41%, 97%);
+    text-align: right;
+    color:hsl(183, 100%, 15%);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.input-number input:focus {
+    outline: none;
+}
+
+.input-number img {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+}
+
+.tip-container {
+    grid-area: tip;
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-areas:
+        "header header header"
+        "b1 b2 b3"
+        "b4 b5 b6";
+}
+
+.tip-container button {
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    color:hsl(0, 0%, 100%);
+    background-color:hsl(183, 100%, 15%);
+    border: none;
+    border-radius: 10%;
+    font-size: 20px;
+}
+
+.people-container {
+    grid-area: people;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.calculations-container {
+    grid-area: calc;
+    background-color: hsl(183, 100%, 15%);
+    width: 90%;
+    height: 90%;
+    border-radius: 5%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+        "tip-label tip-amount"
+        "total-label total-amount"
+        ". ."
+        "reset reset"
+}
+
+.label {
+    color:hsl(0, 0%, 100%);
+    font-size: 16px;
+    justify-self: left;
+    align-self: center;
+    margin-left: 10%;
+    line-height: 18px;
+}
+
+.label-small {
+    color:hsl(184, 14%, 56%);
+    font-size: 14px;
+}
+
+.amount {
+    color: hsl(172, 67%, 45%);
+    font-size: 32px;
+    font-weight: 700;
+    justify-self: right;
+    align-self: center;
+    margin-right: 10%;
+}
+
+.calculations-container button {
+    width: 80%;
+    height: 40%;
+    background-color:hsl(172, 67%, 45%);
+    color:hsl(183, 100%, 15%);
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 1px 0px hsl(183, 100%, 15%);
+    border: none;
+    border-radius: 10px;
 }
 
 .attribution {
