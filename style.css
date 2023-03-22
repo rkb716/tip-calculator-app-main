@@ -98,14 +98,31 @@ h1 {
         "b4 b5 b6";
 }
 
-.tip-container button {
+.tip-container button, .tip-container input {
     text-align: center;
     width: 90%;
     height: 90%;
     border: none;
+    outline: none;
     border-radius: 10%;
     font-size: 20px;
     font-weight: 700;
+    padding: 0;
+}
+
+.tip-container input:not(.selected)::placeholder {
+    color:hsl(0, 0%, 100%);
+}
+
+.tip-container input:not(.unselected)::placeholder {
+    color:hsl(183, 100%, 15%);
+}
+
+#tip-btn-6::-webkit-inner-spin-button, #tip-btn-6::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
 
 .unselected {
