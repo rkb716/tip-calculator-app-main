@@ -79,6 +79,10 @@ h1 {
     outline: none;
 }
 
+.input-number input:hover {
+    outline: hsl(183, 100%, 15%) solid 2px;
+}
+
 .input-number img {
     position: absolute;
     left: 5px;
@@ -109,6 +113,16 @@ h1 {
     font-size: 20px;
     font-weight: 700;
     padding: 0;
+}
+
+.tip-container button:hover:not(.selected),
+.tip-container input:hover:not(.selected) {
+    outline: hsl(172, 67%, 45%) solid 2px;
+    color:hsl(172, 67%, 45%);
+}
+
+.tip-container input:hover:not(.selected)::placeholder {
+    color:hsl(172, 67%, 45%);
 }
 
 .tip-container input:not(.selected)::placeholder {
@@ -196,6 +210,10 @@ h1 {
     text-shadow: 1px 0px hsl(183, 100%, 15%);
     border: none;
     border-radius: 10px;
+}
+
+.calculations-container button:hover {
+    color:hsl(0, 0%, 100%);
 }
 
 .attribution {
