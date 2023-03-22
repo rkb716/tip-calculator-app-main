@@ -17,13 +17,23 @@ const updateTip = (newTipAmount) => {
     updateCalculationDisplay();
 }
 
+const updateSelectedButton = (index) => {
+    for(let i=0; i < 6; i++) {
+        let newClass = "unselected";
+        if(index == i) {
+            newClass = "selected";
+        }
+        $('#tip-btn-' + i).attr("class", newClass);
+    }
+}
+
 const reset = () => {
-    $('#bill-input').val(0);
-    $('#people-input').val(0);
     currentBill = 0;
-    tipAmount = 0;
+    tipAmount = .15;
     numberOfPeople = 1;
-    console.log(tipAmount);
+    $('#bill-input').val(currentBill);
+    $('#people-input').val(numberOfPeople);
+    updateSelectedButton(3);
     updateCalculationDisplay();
 };
 
@@ -35,13 +45,28 @@ const updateCalculationDisplay = () => {
 }
 
 $(document).ready(() => {
-    console.log("ready");
-    $(document).on("click", '#tip-btn-1', {"param": .05}, (event) => {updateTip(event.data.param)});
-    $(document).on("click", '#tip-btn-2', {"param": .1}, (event) => {updateTip(event.data.param)});
-    $(document).on("click", '#tip-btn-3', {"param": .15}, (event) => {updateTip(event.data.param)});
-    $(document).on("click", '#tip-btn-4', {"param": .25}, (event) => {updateTip(event.data.param)});
-    $(document).on("click", '#tip-btn-5', {"param": .5}, (event) => {updateTip(event.data.param)});
+    $(document).on("click", '#tip-btn-1', {"param": .05, "index": 1}, (event) => {
+        updateTip(event.data.param);
+        updateSelectedButton(event.data.index);
+    });
+    $(document).on("click", '#tip-btn-2', {"param": .1, "index": 2}, (event) => {
+        updateTip(event.data.param);
+        updateSelectedButton(event.data.index);
+    });
+    $(document).on("click", '#tip-btn-3', {"param": .15, "index": 3}, (event) => {
+        updateTip(event.data.param);
+        updateSelectedButton(event.data.index);
+    });
+    $(document).on("click", '#tip-btn-4', {"param": .25, "index": 4}, (event) => {
+        updateTip(event.data.param);
+        updateSelectedButton(event.data.index);
+    });
+    $(document).on("click", '#tip-btn-5', {"param": .5, "index": 5}, (event) => {
+        updateTip(event.data.param);
+        updateSelectedButton(event.data.index);
+    });
     $(document).on("click", "#reset-btn", reset);
     $(document).on("input", "#bill-input", updateBill);
     $(document).on("input", "#people-input", updateNumberOfPeople);
-})
+    reset();
+});
