@@ -3,18 +3,31 @@ var tipAmount = 0;
 var numberOfPeople = 0;
 
 const updateBill = () => {
-    currentBill = Number($('#bill-input').val());
+    let currentValue = $('#bill-input').val();
+    if(currentValue.length > 8) {
+        currentValue = currentValue.slice(0, 8);
+        $('#bill-input').val(currentValue);
+    }
+    currentBill = Number(currentValue);
     updateCalculationDisplay();
 }
 
 const updateNumberOfPeople = () => {
-    numberOfPeople = Number($('#people-input').val());
+    let currentValue = $('#people-input').val();
+    if(currentValue.length > 8) {
+        currentValue = currentValue.slice(0, 8);
+        $('#people-input').val(currentValue);
+    }
+    numberOfPeople = Number(currentValue);
     updateCalculationDisplay();
 }
 
 const updateCustomTip = () => {
     let value = $('#tip-btn-6').val();
     value = value.replace("%", "");
+    if(value.length > 4) {
+        value = value.slice(0, 4);
+    }
     if(isNaN(value)){
         value = 0
     }
