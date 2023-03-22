@@ -18,7 +18,7 @@
 
 h1 {
     text-align: center;
-    color:hsl(183, 100%, 15%);
+    color: hsl(183, 100%, 15%);
     font-size: 24px;
     line-height: 24px;
 }
@@ -38,7 +38,7 @@ h1 {
 }
 
 .option-header {
-    color:hsl(184, 14%, 56%);
+    color: hsl(184, 14%, 56%);
     font-weight: 700;
 }
 
@@ -68,9 +68,9 @@ h1 {
     height: 100%;
     border: none;
     border-radius: 10px;
-    background-color:hsl(189, 41%, 97%);
+    background-color: hsl(189, 41%, 97%);
     text-align: right;
-    color:hsl(183, 100%, 15%);
+    color: hsl(183, 100%, 15%);
     font-size: 24px;
     font-weight: 700;
 }
@@ -98,7 +98,8 @@ h1 {
         "b4 b5 b6";
 }
 
-.tip-container button, .tip-container input {
+.tip-container button,
+.tip-container input {
     text-align: center;
     width: 90%;
     height: 90%;
@@ -111,28 +112,29 @@ h1 {
 }
 
 .tip-container input:not(.selected)::placeholder {
-    color:hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
 }
 
 .tip-container input:not(.unselected)::placeholder {
-    color:hsl(183, 100%, 15%);
+    color: hsl(183, 100%, 15%);
 }
 
-#tip-btn-6::-webkit-inner-spin-button, #tip-btn-6::-webkit-outer-spin-button { 
+#tip-btn-6::-webkit-inner-spin-button,
+#tip-btn-6::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin: 0; 
+    margin: 0;
 }
 
 .unselected {
-    color:hsl(0, 0%, 100%);
-    background-color:hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(183, 100%, 15%);
 }
 
 .selected {
-    color:hsl(183, 100%, 15%);
-    background-color:hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
 }
 
 .people-container {
@@ -162,7 +164,7 @@ h1 {
 }
 
 .label {
-    color:hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
     font-size: 16px;
     justify-self: left;
     align-self: center;
@@ -171,7 +173,7 @@ h1 {
 }
 
 .label-small {
-    color:hsl(184, 14%, 56%);
+    color: hsl(184, 14%, 56%);
     font-size: 14px;
 }
 
@@ -187,8 +189,8 @@ h1 {
 .calculations-container button {
     width: 80%;
     height: 40%;
-    background-color:hsl(172, 67%, 45%);
-    color:hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
     font-size: 16px;
     font-weight: 700;
     text-shadow: 1px 0px hsl(183, 100%, 15%);
@@ -203,4 +205,83 @@ h1 {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+/**
+*
+* Mobile Overrides
+*
+**/
+@media (max-width: 720px) {
+    .background {
+        width: 375px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .calculator-container {
+        width: 100%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+
+    .bill-container {
+        height: 20%;
+    }
+
+    .tip-container {
+        height: 30%;
+    }
+
+    .tip-container button,
+    .tip-container input {
+        height: 60%;
+        font-size: 18px;
+    }
+
+    .people-container {
+        height: 20%;
+    }
+
+    .calculations-container {
+        background-color: hsl(183, 100%, 15%);
+        width: 90%;
+        height: 40%;
+        border-radius: 5%;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 33% 33% 33%;
+        grid-template-areas:
+            "tip-label tip-amount"
+            "total-label total-amount"
+            "reset reset"
+    }
+
+    .label {
+        font-size: 14px;
+    }
+
+    .label-small {
+        font-size: 12px;
+    }
+
+    .amount {
+        font-size: 24px;
+    }
+
+    .calculations-container button {
+        height: 60%;
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 600px) {
+    .background {
+        height: 600px;
+    }
 }
